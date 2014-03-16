@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'iconitos';
+  src: url("../fonts/icomoon.eot?-3wxtv8");
+  src: url("../fonts/icomoon.eot?#iefix-3wxtv8") format('embedded-opentype'), url("../fonts/icomoon.woff?-3wxtv8") format('woff'), url("../fonts/icomoon.ttf?-3wxtv8") format('truetype'), url("../fonts/icomoon.svg?-3wxtv8#icomoon") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 a {
   color: #dd4f24;
 }
@@ -6,6 +13,24 @@ body {
   color: #444;
   font-family: Arial;
   font-size: 16px;
+}
+footer {
+  background: #dd4f24;
+  color: rgba(255,255,255,0.5);
+  padding: 1em 0;
+  text-align: center;
+  width: 100%;
+}
+footer h3 {
+  font-size: 14px;
+  font-weight: normal;
+}
+footer h3 strong {
+  display: block;
+}
+footer h3 .mejor:before,
+footer h3 .mejor:after {
+  content: " - ";
 }
 header {
   background: #444;
@@ -44,6 +69,12 @@ header .titular .publicar {
   text-decoration: none;
   text-shadow: 1px 1px 0px #000;
 }
+header .titular .publicar:before {
+  display: inline-block;
+  font-family: "iconitos";
+  content: "\e601";
+  margin: 0 3px 0 0;
+}
 header .titular .titulo {
   font-size: 18px;
   font-weight: normal;
@@ -56,7 +87,7 @@ header .usuario {
   top: 10px;
 }
 header .usuario .avatar {
-  margin: 0 1em 0 0;
+  margin: 0 1.2em 0 0;
   position: relative;
   z-index: 69;
 }
@@ -72,9 +103,16 @@ header .usuario .flechita {
   position: absolute;
   right: -15px;
   text-align: right;
+  text-decoration: none;
   top: 15px;
   width: 50%;
   z-index: -1;
+}
+header .usuario .flechita:after {
+  content: "\e602";
+  display: inline-block;
+  font-family: "iconitos";
+  text-shadow: 1px 1px 0px #000;
 }
 nav {
   background: #22bce0;
@@ -117,13 +155,84 @@ nav .menu li a {
   border-radius: 0 0 0.5em 0.5em;
   box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
   color: #7a7a7a;
+  margin-bottom: 1em;
 }
 .posts .acciones {
   border-top: 3px solid #22bce0;
+  overflow: hidden;
   padding: 0.5em;
+}
+.posts .acciones .datos {
+  float: right;
+}
+.posts .acciones .datos .comentarios {
+  background: #444;
+  border-radius: 3px;
+  color: #fff;
+  margin: 0 1em 0 0;
+  padding: 2px 5px;
+  text-decoration: none;
+}
+.posts .acciones .datos .estrellita {
+  text-decoration: none;
+}
+.posts .acciones .datos .estrellita:after {
+  content: "\e600";
+  color: #e0d561;
+  font-family: "iconitos";
+}
+.posts .acciones .votos {
+  float: left;
+}
+.posts .acciones .votos .down,
+.posts .acciones .votos .up {
+  text-decoration: none;
+}
+.posts .acciones .votos .down {
+  color: #f00;
+}
+.posts .acciones .votos .down:before {
+  font-family: "iconitos";
+  font-size: 1.5em;
+  content: "\e602";
+  vertical-align: bottom;
+}
+.posts .acciones .votos .up {
+  color: #008000;
+}
+.posts .acciones .votos .up:before {
+  font-family: "iconitos";
+  font-size: 1.5em;
+  content: "\e603";
+  vertical-align: bottom;
 }
 .posts .descripcion {
   color: #7a7a7a;
+}
+.posts .descripcion .detalles {
+  height: 160px;
+  margin-left: 130px;
+}
+.posts .descripcion .detalles .autor {
+  margin: 0.5em 0 2em 0;
+}
+.posts .descripcion .detalles .fecha {
+  float: right;
+  margin: 0 1em 0 0;
+}
+.posts .descripcion .detalles .tag {
+  background: #22bce0;
+  border-radius: 0.5em;
+  color: #fff;
+  padding: 0.2em 0.5em;
+  text-decoration: none;
+}
+.posts .descripcion .detalles .titulo {
+  color: #444;
+  font-size: 18px;
+  font-style: italic;
+  margin: 0;
+  padding: 0.5em 0.5em 0 0;
 }
 .posts .descripcion .imagen {
   float: left;
@@ -134,4 +243,24 @@ nav .menu li a {
   height: 160px;
   vertical-align: top;
   width: 120px;
+}
+@media screen and (min-width: 768px) {
+  header .titular .publicar {
+    position: relative;
+    padding-left: 2em;
+  }
+  header .titular .publicar:before {
+    left: 0px;
+    font-size: 2em;
+    position: absolute;
+    top: -10px;
+  }
+  .posts .post {
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+  }
+  .posts .post:nth-child(odd) {
+    margin-right: 2%;
+  }
 }
